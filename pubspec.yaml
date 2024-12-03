@@ -39,6 +39,7 @@ dependencies:
   google_fonts: ^6.2.1
   get_secure_storage: ^1.0.5
   sizer: ^3.0.5
+  badges: ^3.1.2
 
 dependency_overrides:
   lints: ^5.0.0

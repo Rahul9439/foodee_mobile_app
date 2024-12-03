@@ -1,3 +1,4 @@
+import 'package:foodee_mobile_app/dashboard/controller/dashboard_controller.dart';
 import 'package:get/get.dart';
 import '../../home/model/category_model.dart';
 
@@ -49,6 +50,11 @@ class CartController extends GetxController {
       totalCartPrice += double.parse(item.totalPrice ?? '0.0');
     }
     update();
+    if(Get.isRegistered<DashboardController>()){
+      Get.lazyPut(()=>DashboardController());
+    }
+    Get.find<DashboardController>().cartCount = '${cartList.length}';
+    Get.find<DashboardController>().update();
   }
 
   void onClearCart() {

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodee_mobile_app/cart/view/cart_screen.dart';
 import 'package:foodee_mobile_app/home/view/home_screen.dart';
 import 'package:get/get.dart';
 
@@ -8,6 +9,7 @@ class DashboardController extends GetxController{
   late List<DashboardModel> dashboardList;
   late List<Widget> dashboardScreensList;
   int selectedIndex = 0;
+  String? cartCount;
 
   @override
   void onInit() {
@@ -26,7 +28,7 @@ class DashboardController extends GetxController{
     dashboardScreensList = [
       const Center(child: Text('Location Screen')),
       const HomeScreen(),
-      const Center(child: Text('Cart Screen')),
+      const CartScreen(),
       const Center(child: Text('User Screen')),
     ];
   }

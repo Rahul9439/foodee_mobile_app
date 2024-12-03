@@ -17,9 +17,10 @@ class DashboardScreen extends StatelessWidget {
           return Scaffold(
             backgroundColor: Colors.white,
             body: controller.dashboardScreensList[controller.selectedIndex],
-            floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+            floatingActionButtonLocation:
+                FloatingActionButtonLocation.centerFloat,
             floatingActionButton: Container(
-                margin: const EdgeInsets.only(left: 10,right: 10),
+                margin: const EdgeInsets.only(left: 10, right: 10),
                 padding: const EdgeInsets.all(20),
                 width: double.maxFinite,
                 decoration: BoxDecoration(
@@ -40,6 +41,7 @@ class DashboardScreen extends StatelessWidget {
                       return DashboardWidget(
                         icon: dashboard.icon,
                         name: dashboard.name,
+                        cartQty: index == 2 ? '${controller.cartCount}' : '',
                         color: index != controller.selectedIndex
                             ? Colors.black54
                             : const Color(0xffF28482),
