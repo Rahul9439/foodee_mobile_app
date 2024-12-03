@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:get/get_navigation/src/routes/transitions_type.dart';
 
+import 'Utils/mobile_binding.dart';
 import 'Utils/router.dart';
 
 void main() {
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget {
       getPages: route,
       initialRoute: '/',
       defaultTransition: Transition.fade,
+      initialBinding: MainBinding(),
     );
   }
 }

@@ -17,8 +17,9 @@ class DashboardScreen extends StatelessWidget {
           return Scaffold(
             backgroundColor: Colors.white,
             body: controller.dashboardScreensList[controller.selectedIndex],
+            floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
             floatingActionButton: Container(
-                margin: const EdgeInsets.only(left: 30),
+                margin: const EdgeInsets.only(left: 10,right: 10),
                 padding: const EdgeInsets.all(20),
                 width: double.maxFinite,
                 decoration: BoxDecoration(
