@@ -46,14 +46,15 @@ class CartItemWidget extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 15.0),
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     CommonText(
                       title: title,
-                      fontSize: 13,
+                      fontSize: 11,
                     ),
                     CommonText(
-                      title: price,
-                      fontSize: 12,
+                      title: '\$${double.parse(price).toStringAsFixed(2)}',
+                      fontSize: 10,
                       color: const Color(0xffF28482),
                     )
                   ],
@@ -74,7 +75,7 @@ class CartItemWidget extends StatelessWidget {
               ),
                Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 15),
-                child: CommonText(title: quantity),
+                child: CommonText(title: quantity,fontSize: 10,),
               ),
               InkWell(
                 onTap: onIncreaseQuantity,

@@ -25,7 +25,7 @@ class DashboardWidget extends StatelessWidget {
           ),
           CommonText(
             title: name,
-            fontSize: 12,
+            fontSize: 10,
             color: color,
           ),
         ],

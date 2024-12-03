@@ -82,6 +82,7 @@ class CategoryDetailsController extends GetxController {
   onAddToCart() {
     if(Get.isRegistered<CartController>()){
       Get.find<CartController>().cartList.add(categoryModel!);
+      Get.find<CartController>().calculateSum();
     }
     Get.toNamed('CartScreen');
     categoryModel = null;

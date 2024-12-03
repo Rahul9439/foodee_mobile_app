@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:foodee_mobile_app/category/controller/category_details_controller.dart';
 import 'package:foodee_mobile_app/common_widget/common_text.dart';
 import 'package:get/get.dart';
+import 'package:sizer/sizer.dart';
 
 import '../../home/model/category_model.dart';
 import '../widget/category_detail_menu_widget.dart';
@@ -15,20 +16,24 @@ class CategoryDetailsScreen extends StatelessWidget {
         init: CategoryDetailsController(),
         builder: (controller) {
           return Scaffold(
+            backgroundColor: Colors.white,
             appBar: AppBar(
               backgroundColor: const Color(0xffF28482),
               automaticallyImplyLeading: false,
+              toolbarHeight: 35.sp,
               title: Row(
                 children: [
-                  const Expanded(
+                   Expanded(
                       child: CommonText(
                     title: 'Mr.Cheezy',
                     color: Colors.white,
-                    fontSize: 32,
+                    fontSize: 22.sp,
                   )),
                   InkWell(
                     onTap: Get.back,
                     child: Container(
+                      height: 4.h,
+                      width: 4.h,
                       clipBehavior: Clip.hardEdge,
                       padding: const EdgeInsets.symmetric(
                           horizontal: 8, vertical: 5),
@@ -37,8 +42,7 @@ class CategoryDetailsScreen extends StatelessWidget {
                           borderRadius: BorderRadius.circular(13)),
                       child: Image.asset(
                         'assets/icons/X.png',
-                        height: 30,
-                        width: 25,
+                        fit: BoxFit.cover,
                       ),
                     ),
                   )
@@ -49,12 +53,12 @@ class CategoryDetailsScreen extends StatelessWidget {
               physics: const ClampingScrollPhysics(),
               children: [
                 SizedBox(
-                  height: 340,
+                  height: 28.h,
                   child: Stack(
                     alignment: Alignment.topCenter,
                     children: [
                       Container(
-                        height: 320,
+                        height: 26.h,
                         width: double.maxFinite,
                         decoration: const BoxDecoration(
                             color: Color(0xffF28482),
@@ -66,18 +70,19 @@ class CategoryDetailsScreen extends StatelessWidget {
                         alignment: Alignment.bottomRight,
                         child: Image.asset(
                           'assets/image/3d-casual-life-burger-slant 1.png',
-                          width: 340,
+                          fit: BoxFit.cover,
+                          // height: 80.w,
                         ),
                       ),
                       Align(
-                        alignment: Alignment.centerLeft,
+                        alignment: Alignment.topLeft,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Container(
-                              padding: const EdgeInsets.all(10),
+                              padding:  EdgeInsets.symmetric(horizontal: 12.sp,vertical: 10.sp),
                               margin: const EdgeInsets.only(
-                                  bottom: 5, top: 50, left: 20),
+                                  bottom: 5, left: 20),
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(30),
                                   color: const Color(0xffF7EDE2)),
@@ -88,7 +93,7 @@ class CategoryDetailsScreen extends StatelessWidget {
                               ),
                             ),
                             Container(
-                              padding: const EdgeInsets.all(10),
+                              padding: EdgeInsets.symmetric(horizontal: 12.sp,vertical: 10.sp),
                               margin: const EdgeInsets.only(left: 20),
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(30),
@@ -105,15 +110,15 @@ class CategoryDetailsScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                const Padding(
-                  padding: EdgeInsets.only(left: 15, right: 15, top: 15),
+                 const Padding(
+                  padding: EdgeInsets.only(left: 20, right: 20, top: 15),
                   child: CommonText(
                     title: 'Add More Flavor 🤩',
-                    fontSize: 24,
+                    fontSize: 20,
                   ),
                 ),
                 SizedBox(
-                  height: 210,
+                  height: 210.px,
                   child: ListView.builder(
                     padding: EdgeInsets.zero,
                     scrollDirection: Axis.horizontal,
@@ -139,11 +144,11 @@ class CategoryDetailsScreen extends StatelessWidget {
                       Expanded(
                           child: CommonText(
                         title: 'Nutrition facts',
-                        fontSize: 24,
+                        fontSize: 18,
                       )),
                       CommonText(
                         title: '650 Cal',
-                        fontSize: 24,
+                        fontSize: 16,
                       )
                     ],
                   ),
@@ -159,12 +164,12 @@ class CategoryDetailsScreen extends StatelessWidget {
                             children: [
                               CommonText(
                                 title: '35 g',
-                                fontSize: 20,
+                                fontSize: 15,
                                 fontWeight: FontWeight.w300,
                               ),
                               CommonText(
                                   title: 'Total Fat(45% Dv)',
-                                  fontSize: 11,
+                                  fontSize: 10,
                                   fontWeight: FontWeight.w200),
                             ],
                           ),
@@ -177,12 +182,12 @@ class CategoryDetailsScreen extends StatelessWidget {
                             children: [
                               CommonText(
                                 title: '43 g',
-                                fontSize: 20,
+                                fontSize: 9,
                                 fontWeight: FontWeight.w300,
                               ),
                               CommonText(
                                   title: 'Total Carbs (16% DV)',
-                                  fontSize: 11,
+                                  fontSize: 9,
                                   fontWeight: FontWeight.w200),
                             ],
                           ),
@@ -195,12 +200,12 @@ class CategoryDetailsScreen extends StatelessWidget {
                             children: [
                               CommonText(
                                 title: '36 g',
-                                fontSize: 20,
+                                fontSize: 15,
                                 fontWeight: FontWeight.w300,
                               ),
                               CommonText(
                                   title: 'Protein',
-                                  fontSize: 11,
+                                  fontSize: 9,
                                   fontWeight: FontWeight.w200),
                             ],
                           ),
@@ -214,7 +219,7 @@ class CategoryDetailsScreen extends StatelessWidget {
                       EdgeInsets.only(left: 15, right: 15, bottom: 10, top: 20),
                   child: CommonText(
                     title: 'Description',
-                    fontSize: 24,
+                    fontSize: 20,
                   ),
                 ),
                 const Padding(
@@ -222,15 +227,16 @@ class CategoryDetailsScreen extends StatelessWidget {
                   child: CommonText(
                     title:
                         'Each Mr.Cheezy® with Cheese Bacon burger features thick-cut applewood smoked bacon atop a ¼ lb.',
-                    fontSize: 14,
+                    fontSize: 10,
                     fontWeight: FontWeight.w300,
                   ),
                 ),
+                const SizedBox(height: 120,)
               ],
             ),
             floatingActionButtonLocation:
                 FloatingActionButtonLocation.centerFloat,
-            floatingActionButton: controller.categoryModel ==null
+            floatingActionButton: controller.categoryModel == null
                 ? null
                 : Container(
                     margin: const EdgeInsets.only(left: 10, right: 10),
@@ -251,7 +257,7 @@ class CategoryDetailsScreen extends StatelessWidget {
                         Expanded(
                           child: Container(
                             padding: const EdgeInsets.symmetric(
-                                horizontal: 30, vertical: 20),
+                                 vertical: 20),
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(20),
                                 border:
@@ -262,9 +268,10 @@ class CategoryDetailsScreen extends StatelessWidget {
                                 InkWell(
                                   onTap: controller.onDecreaseQuantity,
                                   child: const CircleAvatar(
-                                    radius: 15,
+                                    radius: 13,
                                     backgroundColor: Color(0xffF7EDE2),
                                     child: Icon(Icons.remove,
+                                        size: 18,
                                         color: Color(0xffF28482)),
                                   ),
                                 ),
@@ -272,15 +279,17 @@ class CategoryDetailsScreen extends StatelessWidget {
                                   padding: const EdgeInsets.symmetric(
                                       horizontal: 15),
                                   child: CommonText(
-                                      title: '${controller.categoryModel?.quantity}'),
+                                      title:
+                                          '${controller.categoryModel?.quantity}'),
                                 ),
                                 InkWell(
                                   onTap: controller.onIncreaseQuantity,
                                   child: const CircleAvatar(
-                                    radius: 15,
+                                    radius: 13,
                                     backgroundColor: Color(0xffF28482),
                                     child: Icon(
                                       Icons.add,
+                                      size: 18,
                                       color: Colors.white,
                                     ),
                                   ),
@@ -297,7 +306,7 @@ class CategoryDetailsScreen extends StatelessWidget {
                             onTap: controller.onAddToCart,
                             child: Container(
                               padding: const EdgeInsets.symmetric(
-                                  horizontal: 30, vertical: 10),
+                                  vertical: 10),
                               decoration: BoxDecoration(
                                 color: const Color(0xffF28482),
                                 borderRadius: BorderRadius.circular(20),
@@ -307,11 +316,12 @@ class CategoryDetailsScreen extends StatelessWidget {
                                 children: [
                                   const CommonText(
                                     title: 'Add to Cart',
-                                    fontSize: 16,
+                                    fontSize: 11,
                                     color: Colors.white,
                                   ),
                                   CommonText(
-                                    title: '\$${controller.categoryModel?.totalPrice}',
+                                    title:
+                                        '\$${double.parse(controller.categoryModel!.totalPrice ?? '').toStringAsFixed(2)}',
                                     fontSize: 20,
                                     color: Colors.white,
                                     fontWeight: FontWeight.w500,

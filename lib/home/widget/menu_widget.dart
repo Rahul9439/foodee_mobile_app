@@ -14,8 +14,8 @@ class MenuWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 210,
-      width: 400,
+      height: 190,
+      width: 350,
       padding: const EdgeInsets.only(left: 10,right: 10,bottom: 20),
       child: Stack(
         alignment: Alignment.topRight,
@@ -23,7 +23,7 @@ class MenuWidget extends StatelessWidget {
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
-              height: 150,
+              height: 130,
               clipBehavior: Clip.hardEdge,
               margin: const EdgeInsets.only(right: 10),
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
@@ -45,13 +45,13 @@ class MenuWidget extends StatelessWidget {
                     children: [
                       CommonText(
                         title: title,
-                        fontSize: 24,
+                        fontSize: 20,
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
                       ),
                       CommonText(
                         title: subTitle,
-                        fontSize: 16,
+                        fontSize: 10,
                         color: Colors.white,
                         fontWeight: FontWeight.w300,
                       ),
